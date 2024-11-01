@@ -17,5 +17,14 @@ export const delFromStore = <T = string>(key: string, fallback?: T) => {
 };
 
 export const getAllFromStore = () => {
-  return db.getAll();
+  const urls: TKukuruUrls = [];
+  db.each(function (key, value) {
+    urls.push({ key, value });
+
+    if (key === 'stopLoop') {
+      return false;
+    }
+  });
+
+  return urls;
 };

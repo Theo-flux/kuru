@@ -6,8 +6,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { LinkSchema, TLinkSchema } from '@/types/validators';
 import { shortenUrl } from '@/utils';
 import { getAllFromStore } from '@/utils/store';
+import ListView from './ListView';
+import { useState } from 'react';
 
 const HomeView = () => {
+  const [urls, setUrls] = useState<TKukuruUrls>(getAllFromStore());
   const {
     register,
     handleSubmit,
@@ -21,13 +24,13 @@ const HomeView = () => {
   const onSubmit: SubmitHandler<TLinkSchema> = async (formData) => {
     shortenUrl(formData.link);
 
-    console.log(getAllFromStore());
+    setUrls(getAllFromStore());
   };
 
   return (
     <div className="hero min-h-screen bg-ebony">
       <div className="hero-content text-neutral-content text-center ">
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 relative overflow-x-auto">
           <div className="max-w-xl">
             <Title className="text-cerise" text="Shorten Your Loooong Links :)" />
             <Paragraph
@@ -51,6 +54,8 @@ const HomeView = () => {
               </fieldset>
             </form>
           </div>
+
+          <ListView urls={urls} />
         </div>
       </div>
     </div>
