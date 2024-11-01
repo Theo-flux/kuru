@@ -7,10 +7,10 @@ import { LinkSchema, TLinkSchema } from '@/types/validators';
 import { shortenUrl } from '@/utils';
 import { getAllFromStore } from '@/utils/store';
 import ListView from './ListView';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const HomeView = () => {
-  const [urls, setUrls] = useState<TKukuruUrls>(getAllFromStore());
+  const [urls, setUrls] = useState<TKukuruUrls>([]);
   const {
     register,
     handleSubmit,
@@ -26,6 +26,11 @@ const HomeView = () => {
 
     setUrls(getAllFromStore());
   };
+
+  useEffect(() => {
+    const initialUrls = getAllFromStore();
+    setUrls(initialUrls);
+  }, []);
 
   return (
     <div className="hero min-h-screen bg-ebony">
@@ -55,7 +60,7 @@ const HomeView = () => {
             </form>
           </div>
 
-          <ListView urls={urls} />
+          <ListView urls={urls} setUrls={setUrls} />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { delFromStore, getAllFromStore } from '@/utils/store';
+import { delFromStore } from '@/utils/store';
 import { useState } from 'react';
 
 interface IListViewProps {
@@ -10,10 +10,11 @@ const ListView = ({ urls, setUrls }: IListViewProps) => {
   const [confirmDeleteIndex, setConfirmDeleteIndex] = useState<number | null>(null);
 
   const handleDelete = (key: string) => {
-    delFromStore(key);
-    setUrls(getAllFromStore());
+    const updatedUrls = delFromStore(key);
+    setUrls(updatedUrls);
     setConfirmDeleteIndex(null);
   };
+
   return (
     <table className="table w-full">
       <thead>
