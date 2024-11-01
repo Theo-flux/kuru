@@ -1,5 +1,8 @@
+import { RouterProvider } from 'react-router-dom';
+import { router } from './pages';
+
 function App() {
-  return <div className="">kuru: url shortner app.</div>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;

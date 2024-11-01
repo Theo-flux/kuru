@@ -4,6 +4,33 @@
 
 @layer base {
   body {
-    @apply bg-ebony;
+    @apply bg-transparent;
+  }
+}
+
+@layer components {
+  .button {
+    @apply flex cursor-pointer items-center justify-center text-sm whitespace-nowrap px-2;
+    @apply transition-all duration-150 ease-in-out disabled:cursor-not-allowed disabled:opacity-50 hover:disabled:opacity-50;
+  }
+  .button-filled {
+    @apply border-none bg-cerise text-white hover:opacity-50;
+    @apply h-[45px] w-full rounded-lg border font-medium;
+  }
+  .button-transparent {
+    @apply border-none bg-transparent text-black hover:bg-cerise/30;
+    @apply h-[45px] w-full rounded-lg border font-medium;
+  }
+  .button-outlined {
+    @apply border border-borderLine bg-white text-black hover:border-cerise hover:shadow;
+    @apply h-[45px] w-full rounded-lg border font-medium;
+  }
+  .button-light {
+    @apply border-none bg-cerise/10 text-cerise hover:bg-cerise/50 hover:text-white;
+    @apply h-[45px] w-full rounded-lg border font-medium;
+  }
+  .button-underlined {
+    @apply flex w-fit items-center justify-start space-x-1 border-b border-cerise px-2 py-1 ease-in-out;
+    @apply text-sm text-cerise transition-all duration-300 hover:bg-cerise hover:text-white;
   }
 }
