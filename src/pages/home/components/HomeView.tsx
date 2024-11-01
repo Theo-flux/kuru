@@ -4,6 +4,8 @@ import Button from '@/atoms/forms/Button';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LinkSchema, TLinkSchema } from '@/types/validators';
+import { shortenUrl } from '@/utils';
+import { getAllFromStore } from '@/utils/store';
 
 const HomeView = () => {
   const {
@@ -17,7 +19,9 @@ const HomeView = () => {
   });
 
   const onSubmit: SubmitHandler<TLinkSchema> = async (formData) => {
-    console.log(formData);
+    shortenUrl(formData.link);
+
+    console.log(getAllFromStore());
   };
 
   return (
