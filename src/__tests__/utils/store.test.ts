@@ -29,7 +29,7 @@ describe('Store Functions', () => {
   it('should retrieve a value from the store', () => {
     const key = 'testKey';
     const value = 'testValue';
-    store.local.set(key, value); // Set value in the mock store
+    store.local.set(key, value);
 
     const result = getFromStore(key, 'fallbackValue');
 
@@ -61,18 +61,18 @@ describe('Store Functions', () => {
   it('should delete a key from the store', () => {
     const key = 'testKey';
     const value = 'testValue';
-    store.local.set(key, value); // Set value in the mock store
+    store.local.set(key, value);
 
     const result = delFromStore(key);
 
-    expect(result).toEqual([]); // Since it's the only item, the result should be empty now
+    expect(result).toEqual([]);
     expect(store.local.remove).toHaveBeenCalledWith(key);
   });
 
   it('should retrieve a long link from its ID', () => {
     const id = 'testId';
     const key = 'testKey';
-    store.local.set(key, id); // Set value in the mock store
+    store.local.set(key, id);
 
     const result = getLongLinkFromId(id);
 
