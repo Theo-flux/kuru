@@ -4,7 +4,7 @@ const BASE62_CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
 const BASE62_LENGTH = BASE62_CHARS.length;
 
 // convert an integer to a Base62 encoded string
-function base62Encode(num: number): string {
+export function base62Encode(num: number): string {
   let encoded = '';
   while (num > 0) {
     encoded = BASE62_CHARS[num % BASE62_LENGTH] + encoded;
