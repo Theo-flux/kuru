@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# Kukuru - URL Shortener
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kukuru is a simple and efficient URL shortening service built with Vite, React, React Router DOM, TypeScript, and Tailwind CSS. This application allows users to shorten long URLs and easily manage them.
+live deployment is at https://kekere.vercel.app/
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Shorten long URLs into compact, shareable links.
+- Store shortened URLs locally for quick access.
+- Automatically detect and skip already shortened URLs.
+- Copy shortened URLs to the clipboard with a single click.
+- View and manage all shortened URLs in a user-friendly interface.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Vite**: A fast build tool and development server.
+- **React**: A JavaScript library for building user interfaces.
+- **React Router DOM**: For routing and navigation in the application.
+- **TypeScript**: For type safety and better developer experience.
+- **Tailwind CSS**: A utility-first CSS framework for styling the application.
+- **Store2**: A lightweight local storage library for managing persistent data.
+- **vitest**: Next Generation Testing Framework.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/kukuru.git
+   cd kukuru
+   ```
+2. Install dependencies:
+
+```bash
+yarn
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+yarn dev
 ```
+
+4. Open your browser and navigate to http://localhost:5173 to view the application.
+
+Usage
+Enter a long URL in the input field and click the "Shorten now!" button.
+The shortened URL will be displayed along with the original URL.
+You can copy the shortened URL or delete it if no longer needed.
