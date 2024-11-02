@@ -35,8 +35,8 @@ const HomeView = () => {
   return (
     <div className="hero min-h-screen bg-ebony">
       <div className="hero-content text-neutral-content text-center ">
-        <div className="flex flex-col space-y-4 relative overflow-x-auto">
-          <div className="max-w-xl">
+        <div className="flex flex-col space-y-4 relative">
+          <div className="w-full max-w-3xl">
             <Title className="text-cerise" text="Shorten Your Loooong Links :)" />
             <Paragraph
               className="max-w-md text-center w-full mx-auto"
@@ -46,7 +46,7 @@ const HomeView = () => {
 
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <fieldset className="flex flex-col sm:flex-row justify-start md:space-x-2">
+              <fieldset className="flex flex-col sm:flex-row justify-start sm:space-x-2">
                 <Input
                   className="w-full"
                   placeholder="Enter the link here"

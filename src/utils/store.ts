@@ -30,3 +30,14 @@ export const delFromStore = <T = string>(key: string, fallback?: T) => {
 
   return getAllFromStore().filter((e) => e.key !== key);
 };
+
+export const getLongLinkFromId = (id: string) => {
+  const urls = getAllFromStore();
+  const url = urls.find((e) => e.value == id);
+
+  if (url) {
+    return url.key;
+  }
+
+  return '';
+};
