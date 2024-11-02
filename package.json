@@ -7,17 +7,23 @@
     "build": "tsc -b && vite build",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "daisyui": "^4.12.14",
+    "jsdom": "^25.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.1",
     "react-router-dom": "^6.27.0",
     "store2": "^2.14.3",
     "ts-node": "^10.9.2",
+    "vitest": "^2.1.4",
     "zod": "^3.23.8"
   },
   "devDependencies": {
