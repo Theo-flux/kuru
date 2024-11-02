@@ -9,7 +9,7 @@ vi.mock(import('@/utils/store'), async (importOriginal) => {
 });
 
 describe('URL Shortener', () => {
-  const url = 'https://example.com';
+  // const url = 'https://example.com';
   const base = 'https://ku/link/';
 
   afterEach(() => {
