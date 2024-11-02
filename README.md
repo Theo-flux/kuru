@@ -44,7 +44,8 @@ yarn dev
 
 4. Open your browser and navigate to http://localhost:5173 to view the application.
 
-Usage
-Enter a long URL in the input field and click the "Shorten now!" button.
-The shortened URL will be displayed along with the original URL.
-You can copy the shortened URL or delete it if no longer needed.
+## Usage
+
+- Enter a long URL in the input field and click the "Shorten now!" button.
+- The shortened URL will be displayed along with the original URL.
+- You can copy the shortened URL or delete it if no longer needed.
